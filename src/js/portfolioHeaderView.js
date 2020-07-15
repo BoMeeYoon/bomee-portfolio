@@ -18,27 +18,29 @@ const headerViewTemplate = `
 const audioHandler = () => {
   const audioBtn = $(".audio-btn");
   const audio = new Audio("./audio/bgm_cut.mp3");
-  
+
   const audioPlay = audio => {
     audio.play();
     audio.classList.remove("play");
+    audioBtn.classList.add("spin");
   };
   const audioPause = audio => {
     audio.pause();
     audio.classList.add("play");
+    audioBtn.classList.remove("spin");
   };
-
-  audioPlay(audio);
+  // audioPlay(audio);
   event(audioBtn, "click", () => {
     const audioClassName = audio.className;
     audioClassName === "play" ? audioPlay(audio) : audioPause(audio);
   });
+  
 };
 
-const mountHeaderView = mount($("#header"), headerViewTemplate);
+const mountHeaderView = () => mount($("#header"), headerViewTemplate);
 
 export default function init() {
-  mountHeaderView;
+  mountHeaderView();
   audioHandler();
   return this;
 };

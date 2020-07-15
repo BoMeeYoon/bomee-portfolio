@@ -3,6 +3,10 @@ import { $, mount } from "./hooks/elemetsHooks.js"
 const skillsViewTemplate = `
   <div class="section__container">
     <div class="skill__container">
+      <h1>Skills</h1>
+      <h2>Skills & Attributes</h2>
+      <p>를 활용한 웹 페이지는 물론 react, jquery, node.js, typescript 등의 기술을 적재적소에 사용할 수 있도록 꾸준히 실무기술을 연구하고 있습니다.
+      </p>
       <div class="skill__left">
         <h3 class="skill__title">Skills</h3>
         <div class="skill">
@@ -67,9 +71,9 @@ const skillsViewTemplate = `
     </div>
   </div>
 `
-const mountSkillsView = mount($("#main__skills"), skillsViewTemplate);
+const mountSkillsView = () => mount($("#main__skills"), skillsViewTemplate);
 
 export default function init() {
-  mountSkillsView;
+  mountSkillsView();
   return this;
 }

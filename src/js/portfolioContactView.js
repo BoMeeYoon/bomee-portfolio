@@ -1,7 +1,7 @@
 import { $, mount } from "./hooks/elemetsHooks.js";
 
 const contactViewTemplate = `
-  <div class="section__container">
+  <div class="contact section__container">
     <h1 class="contact__title">Let's talk</h1>
     <h2 class="contact__email" type="email">primavera0331@gmail.com</h2>
     <div class="contact__links">
@@ -15,9 +15,9 @@ const contactViewTemplate = `
   </div>
 `;
 
-const mountContactView = mount($("#main__contact"), contactViewTemplate);
+const mountContactView = () => mount($("#main__contact"), contactViewTemplate);
 
 export default function init() {
-  mountContactView;
+  mountContactView();
   return this;
 }

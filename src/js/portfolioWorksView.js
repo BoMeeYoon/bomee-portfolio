@@ -58,8 +58,8 @@ const worksViewTemplate = `
   </div>
 `;
 
-const mountWorksView = mount($("#main__works"), worksViewTemplate);
+const mountWorksView = () => mount($("#main__works"), worksViewTemplate);
 export default function init() {
-  mountWorksView;
+  mountWorksView();
   return this;
 }

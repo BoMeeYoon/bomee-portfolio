@@ -12,17 +12,15 @@ const meViewTemplate = `
           class="me__photo"
         />
       </div>
-      <h1 class="me__title">Hello, <br />I'm Front-end Developer👩‍💻</h1>
-      <h2 class="me__description">
-        😍코딩의 즐거움을 아는 프론트엔드 개발자🍭
-      </h2>
+      <h1 class="me__title linear">FRONT - END DEVELOPER</h1>
+      <h1>BOMEE YOON</h1>
       <button class="me__contact-btn">Contact Me</button>
     </div>
 `;
 
-const mountMeView = mount($("#main__me"), meViewTemplate);
+const mountMeView = () => mount($("#main__me"), meViewTemplate);
 
 export default function init() {
-  mountMeView;
+  mountMeView();
   return this;
 }
