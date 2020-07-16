@@ -3,7 +3,7 @@ import { $, mount } from "./hooks/elemetsHooks.js"
 const skillsViewTemplate = `
   <div class="section__container">
     <div class="skill__container">
-      <h1>Skills</h1>
+      <h1 class="linear">Skills</h1>
       <h2>Skills & Attributes</h2>
       <p>< <i class="fab fa-html5"></i> <i class="fab fa-css3"></i> <i class="fab fa-js-square"></i> > 를 활용한 웹 페이지는 물론! <br />
       < <span>React, Jquery, Node.js, Typescript</span> > 등의 기술을 적재적소에 사용할 수 있도록 <br />

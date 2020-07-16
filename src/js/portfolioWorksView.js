@@ -5,7 +5,7 @@ const worksViewTemplate = `
     <h1>My work</h1>
     <h3>Projects</h3>
     <div class="work__categories">
-      <button class="category__btn active">
+      <button class="category__btn selected">
         All<span class="category__count">3</span>
       </button>
       <button class="category__btn">
