@@ -1,0 +1,36 @@
+.about__title.linear::after {
+  background-color: var(--color-orange);
+}
+
+.about__mind {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 800px;
+  margin-top: 5rem;
+}
+
+.about__mind-icon {
+  width: 130px;
+  height: 130px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-orange);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 130px;
+  font-size: 48px;
+  color: var(--color-blue);
+  transition: all var(--animation-duration) ease-in-out;
+
+}
+
+.about__mind-icon:hover {
+  transform: scale(1.1);
+  color: var(--color-white);
+  background-color: var(--color-dark-pink);
+}
+
+.about__mind-title {
+  margin-bottom: 1rem;
+  font-size: var(--font-large);
+}

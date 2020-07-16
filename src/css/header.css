@@ -19,6 +19,9 @@
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
 }
+.header__logo > i {
+  cursor: pointer;
+}
 .header__logo > i.spin {
   animation: spin 2.5s linear infinite;
 }

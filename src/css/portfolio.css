@@ -45,18 +45,21 @@ h1 {
   color: var(--color-black);
   margin: 12px 0;
 }
+
 h2 {
   font-size: var(--font-large);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
   margin: 8px 0;
 }
+
 h3 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
   margin: 4px 0;
 }
+
 p {
   font-size: var(--font-regular);
   color: var(--color-black);
@@ -85,6 +88,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 /*/Chrome, Safari, Opera*/
 body::-webkit-scrollbar {
   display: none;
@@ -93,6 +97,7 @@ body::-webkit-scrollbar {
 a {
   color: var(--color-white);
 }
+
 button {
   cursor: pointer;
 }
@@ -104,16 +109,19 @@ section {
   text-align: center;
   min-height: 720px;
 }
+
 .section__container {
   padding-top: 6rem;
   padding-bottom: 2rem;
   max-width: 1200px;
 }
+
 /* 제목 밑에 밑줄 */
 .linear {
   position: relative;
   margin-top: 2rem;
 }
+
 .linear::after {
   content: "";
   position: absolute;
@@ -126,39 +134,10 @@ section {
   background-color: var(--color-white);
 }
 
-.about__title.linear::after {
-  background-color: var(--color-orange);
-}
-.about__mind {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 800px;
-  margin-top: 5rem;
-}
-.about__mind-icon {
-  width: 130px;
-  height: 130px;
-  margin-bottom: 2rem;
-  border: 1px solid var(--color-orange);
-  border-radius: 50%;
-  text-align: center;
-  line-height: 130px;
-  font-size: 48px;
-  color: var(--color-blue);
-  transition: all var(--animation-duration) ease-in-out;
-}
-.about__mind-icon:hover {
-  border: 1px solid var(--color-blue);
-  transform: scale(1.1);
-}
-.about__mind-title {
-  margin-bottom: 1rem;
-  font-size: var(--font-large);
-}
 #main__skills {
   background-color: var(--color-yellow);
 }
+
 .skill__container {
   margin-top: 7rem;
   margin-bottom: 3rem;
@@ -169,6 +148,7 @@ section {
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -178,7 +158,18 @@ section {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
+  }
+}
+
+@keyframes top-buttom {
+  0% {
+    top: 90%
+  }
+
+  100% {
+    top: 93%;
   }
 }

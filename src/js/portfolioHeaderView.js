@@ -2,7 +2,7 @@ import { $, mount, event } from "./hooks/elemetsHooks.js"
 
 const headerViewTemplate = `
   <div class="header__logo">
-    <i class="fas fa-fan audio-btn"></i>
+    <i class="fas fa-fan audio-btn" title="Music Player"></i>
     <a href="#none">BOMEE's PORTFOLIO</a>
   </div>
   <nav class="header__nav">
@@ -29,7 +29,7 @@ const audioHandler = () => {
     audio.classList.add("play");
     audioBtn.classList.remove("spin");
   };
-  // audioPlay(audio);
+  audioPlay(audio);
   event(audioBtn, "click", () => {
     const audioClassName = audio.className;
     audioClassName === "play" ? audioPlay(audio) : audioPause(audio);
