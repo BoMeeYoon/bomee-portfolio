@@ -20,12 +20,17 @@
   width: 100%;
   height: 720px;
 
-  background: url("../images/background.jpg") center/cover no-repeat;
+  background: url("../images/gradient.jpg") center/cover no-repeat;
   z-index: -1;
   opacity: 0.6;
   filter: blur(2px);
+  transition: all 1s ease-in-out;
+  background-position: center top;
 }
-
+/* 스크롤 이동 시 클래스 네임 역동적으로  */
+#main__me.move-down::after{
+background-position: center bottom;
+}
 #main__me span {
   position: absolute;
   width: inherit;
@@ -107,6 +112,6 @@
 
 .down-arrow.to-next {
   transition: all ease-in-out;
-  animation: top-buttom 2s linear infinite;
+  animation: top-buttom 1.8s linear infinite;
   cursor: pointer;
 }

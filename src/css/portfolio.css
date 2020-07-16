@@ -113,6 +113,7 @@ section {
 .section__container {
   padding-top: 6rem;
   padding-bottom: 2rem;
+  width: 100%;
   max-width: 1200px;
 }
 
@@ -139,11 +140,63 @@ section {
 }
 
 .skill__container {
-  margin-top: 7rem;
   margin-bottom: 3rem;
 }
+.skill__box {
+  display: flex;
+  margin: 20px 0;
+  color: var(--color-light-white);
+  background-color: var(--color-light-grey);
+}
+.skill__title {
+  color: var(--color-white);
+}
+.skill__container i {
+  color: var(--color-dark-pink);
+}
+.skill__container > p> span {
+  color: var(--color-dark-pink);
+  font-weight: var(--weight-bold);
+}
+.skill__left {
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  padding: 20px 40px;
+}
+.skill {
+  margin: 2rem 0;
+}
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+}
+.skill__value {
+  /* width: 100%; */
+  height: 3px;
+  background-color: var(--color-orange);
+}
 
+.skill__right {
+  flex-basis: 40%;
+}
+.skill__right h3 {
+  color: var(--color-white);
+}
 
+.tools {
+  background-color: var(--color-grey);
+}
+.tools,
+.etc {
+  padding: 20px;
+
+}
 @keyframes spin {
   0% {
     transform: rotate(0);
@@ -166,10 +219,11 @@ section {
 
 @keyframes top-buttom {
   0% {
-    top: 90%
+    top: 90%;
+    opacity: 1;
   }
-
   100% {
     top: 93%;
+    opacity: 0.3;
   }
 }

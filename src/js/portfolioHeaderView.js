@@ -8,6 +8,7 @@ const headerViewTemplate = `
   <nav class="header__nav">
     <ul class="header__nav-menu">
       <li class="header__nav-item active">IT'S ME</li>
+      <li class="header__nav-item">ABOUT</li>
       <li class="header__nav-item">SKILLS</li>
       <li class="header__nav-item">WORKS</li>
       <li class="header__nav-item">CONTACT</li>

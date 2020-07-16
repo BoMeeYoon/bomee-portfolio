@@ -7,9 +7,11 @@
   justify-content: space-around;
   align-items: center;
   width: 800px;
-  margin-top: 5rem;
+  margin: 6rem auto 0;
 }
-
+.about__mind-item{
+  margin-top: 3rem;
+}
 .about__mind-icon {
   width: 130px;
   height: 130px;
