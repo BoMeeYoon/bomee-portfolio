@@ -28,8 +28,7 @@ const worksViewTemplate = `
           <h3>Parking Lot System</h3>
           <p>HTML, CSS, Javascript<br/>node.js, express<br/>mySQL<br/>Webpack, Babel</p>
           <div class="project__description-bts">
-            <a href="#none">자세히보기</a>
-            <a href="https://github.com/BoMeeYoon/vanilla-webpack-parkinglot-mvc" target="blank">코드보기</a>
+            <a href="https://github.com/BoMeeYoon/vanilla-webpack-parkinglot-mvc" target="blank"><i class="fab fa-github-square"></i>View Details</a>
           </div>
         </div>
       </div>
@@ -42,8 +41,7 @@ const worksViewTemplate = `
           <h3>Financial Ledger</h3>
           <p>React.js</p>
           <div class="project__description-bts">
-            <a href="#none">자세히보기</a>
-            <a href="https://github.com/BoMeeYoon/react-hooks-financial-ledger" target="blank">코드보기</a>
+            <a href="https://github.com/BoMeeYoon/react-hooks-financial-ledger" target="blank"><i class="fab fa-github-square"></i>View Details</a>
           </div>
         </div>
       </div>
@@ -56,8 +54,7 @@ const worksViewTemplate = `
           <h3>Autocomplete</h3>
           <p>HTML, CSS, Javascript<br/>Webpack, Babel, Eslint</p>
           <div class="project__description-bts">
-            <a href="#none">자세히보기</a>
-            <a href="https://github.com/BoMeeYoon/webpack-autocomplete-api-mocker" target="blank">코드보기</a>
+            <a href="https://github.com/BoMeeYoon/webpack-autocomplete-api-mocker" target="blank"><i class="fab fa-github-square"></i>View Details</a>
           </div>
         </div>
       </div>
@@ -73,8 +70,7 @@ const worksViewTemplate = `
           Python, Django, SSR<br/>
           MySQL</p>
           <div class="project__description-bts">
-            <a href="#none">자세히보기</a>
-            <a href="https://github.com/BoMeeYoon/group-online-coding-education/blob/master/%EC%98%A8%EB%9D%BC%EC%9D%B8%EA%B5%90%EC%9C%A1_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%B5%9C%EC%A2%85.pdf" target="blank">코드보기</a>
+            <a href="https://github.com/BoMeeYoon/group-online-coding-education/blob/master/%EC%98%A8%EB%9D%BC%EC%9D%B8%EA%B5%90%EC%9C%A1_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%B5%9C%EC%A2%85.pdf" target="blank"><i class="fab fa-github-square"></i>View Details</a>
           </div>
         </div>
       </div>    
@@ -89,8 +85,7 @@ const worksViewTemplate = `
           Node.js, express<br/>
           MySQL</p>
           <div class="project__description-bts">
-            <a href="#none">자세히보기</a>
-            <a href="https://github.com/BoMeeYoon/mini-project-in-90factory" target="blank">코드보기</a>
+            <a href="https://github.com/BoMeeYoon/mini-project-in-90factory" target="blank"><i class="fab fa-github-square"></i>View Details</a>
           </div>
         </div>
       </div>    

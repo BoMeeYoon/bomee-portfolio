@@ -137,6 +137,15 @@ section {
   background-color: var(--color-white);
 }
 
+#footer {
+  padding: 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#footer i {
+  animation: spin 2.5s linear infinite;
+}
 
 @keyframes spin {
   0% {

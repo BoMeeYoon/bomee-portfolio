@@ -1,0 +1,41 @@
+#main__contact {
+  background-color: var(--color-pink);
+  min-height: 380px;
+}
+
+.contact.section__container {
+  padding: 3rem 0;
+}
+
+.contact__title,
+.contact__email {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+
+.contact__email i {
+  margin-right: 1rem;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+}
+
+.contact__links span {
+  font-weight: var(--weight-bold);
+}
+
+.contact__links i,
+.contact__links span {
+  cursor: pointer;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.contact__links i:hover,
+.contact__links span:hover {
+  color: var(--color-orange);
+  transform: scale(1.1);
+}
