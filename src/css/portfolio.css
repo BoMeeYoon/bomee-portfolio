@@ -31,10 +31,12 @@
 
   --animation-duration: 300ms;
 
-  --button-large-width: 7rem;
-  --button-large-height: 2.5rem;
-  --button-regular-width: 5rem;
-  --button-regular-height: 2rem;
+  --button-large-width: 9rem;
+  --button-large-height: 3rem;
+  --button-regular-width: 7rem;
+  --button-regular-height: 2.5rem;
+  --button-small-width: 5rem;
+  --button-small-height: 2rem;
 
   --animation-duration: 300ms;
 }
@@ -122,6 +124,7 @@ section {
   position: relative;
   margin-top: 2rem;
 }
+
 .linear::after {
   content: "";
   position: absolute;
@@ -160,6 +163,7 @@ section {
     top: 90%;
     opacity: 1;
   }
+
   100% {
     top: 93%;
     opacity: 0.3;

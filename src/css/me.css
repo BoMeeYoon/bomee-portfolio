@@ -77,8 +77,8 @@ background-position: center bottom;
 }
 
 .me__contact-btn {
-  width: var(--button-large-width);
-  height: var(--button-large-height);
+  width: var(--button-regular-width);
+  height: var(--button-regular-height);
   margin-top: 1rem;
   border: 2px solid var(--color-dark-pink);
   border-radius: var(--size-border-radius);
@@ -100,8 +100,8 @@ background-position: center bottom;
   left: 50%;
   transform: translateX(-50%);
 
-  width: var(--button-large-width);
-  height: var(--button-large-height);
+  width: var(--button-regular-width);
+  height: var(--button-regular-height);
   /* border: 1px solid var(--color-white); */
   /* border-radius: var(--size-border-radius); */
   color: var(--color-light-white);

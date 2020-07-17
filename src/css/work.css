@@ -1,0 +1,120 @@
+.category__btn {
+  width: var(--button-large-width);
+  height: var(--button-large-height);
+  margin: 1rem;
+  border: 1px solid var(--color-dark-white);
+  border-radius: var(--size-border-radius);
+  font-size: var(--font-regular);
+  text-align: center;
+}
+
+.category__btn.selected,
+.category__btn:hover {
+  color: var(--color-white);
+  background-color: var(--color-pink);
+}
+
+.category__btn.selected .category__count,
+.category__btn:hover .category__count {
+  opacity: 1;
+  top: 0;
+}
+
+.category__count {
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--color-orange);
+  border-radius: 50%;
+
+  line-height: 22px;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.work__projects {
+  text-align: center;
+}
+
+.work__project {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  height: 280px;
+  margin: 10px;
+}
+
+.work__project:hover .project__description {
+  opacity: 1;
+}
+
+.project__img {
+  width: 300px;
+  height: 280px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px var(--color-light-grey);
+}
+
+.project__img p {
+  margin: 10px;
+}
+
+.project__img img {
+  max-width: 280px;
+  max-height: 210px;
+  /* object-fit: cover; */
+}
+
+.project__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  padding: 20px;
+  color: var(--color-white);
+  background-color: #555;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.project__description h3,
+.project__description p {
+  color: var(--color-white);
+}
+
+.project__description p {
+  min-height: 160px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.project__description-bts {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.project__description-bts a {
+  display: inline-block;
+  width: var(--button-regular-width);
+  height: var(--button-small-height);
+  line-height: var(--button-small-height);
+  border: 1px solid var(--color-white);
+  border-radius: var(--size-border-radius);
+  cursor: pointer;
+}
+
+.project__description-bts a:hover {
+  color: var(--color-white);
+  background-color: var(--color-blue);
+}
