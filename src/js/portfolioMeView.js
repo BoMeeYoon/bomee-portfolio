@@ -1,4 +1,4 @@
-import { $, mount } from "./hooks/elemetsHooks.js"
+import { $, mount } from "./hooks/elemetsHooks.js";
 
 const meViewTemplate = `
     <div class="me section__container">
@@ -14,7 +14,7 @@ const meViewTemplate = `
       </div>
       <h1 class="me__title">FRONT - END DEVELOPER</h1>
       <h1>BOMEE YOON</h1>
-      <button class="me__contact-btn">Contact Me</button>
+      <button class="me__contact-btn" data-link="#main__contact">Contact Me</button>
       <i class="fas fa-angle-double-down down-arrow to-next"></i>
     </div>
 `;

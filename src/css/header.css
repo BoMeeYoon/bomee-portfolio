@@ -6,13 +6,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  border: var(--size-border-radius);
   color: var(--color-white);
-  background-color: var(--color-pink);
+  background-color: transparent;
+  transition: all var(--animation-duration) ease-in-out;
 
   z-index: 5;
 }
 
-#header.dark {
+#header.navbar__dark {
   background-color: var(--color-pink);
 }
 
