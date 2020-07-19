@@ -1,6 +1,6 @@
 #main__contact {
   background-color: var(--color-pink);
-  min-height: 380px;
+  min-height: 540px;
 }
 
 .contact.section__container {
@@ -39,3 +39,27 @@
   color: var(--color-orange);
   transform: scale(1.1);
 }
+
+.fa-arrow-up {
+  position: fixed;
+  bottom: 80px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 50px;
+  color: var(--color-white);
+  background-color: var(--color-dark-pink);
+
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+  pointer-events: none;
+}
+
+.fa-arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+

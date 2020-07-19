@@ -1,5 +1,5 @@
 const log = console.log;
-export const scrollHeight = selector => {
+export const getElementHeight = selector => {
   return selector.getBoundingClientRect().height;
 };
 

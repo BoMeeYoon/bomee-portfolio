@@ -1,5 +1,13 @@
-import { $, mount, event, addName, removeName } from "./hooks/elemetsHooks.js";
-import { scrollHeight, scrollIntoView } from "./hooks/scrollHooks.js";
+import {
+  $,
+  mount,
+  event,
+  addName,
+  removeHandler,
+  setAttribute
+} from "./hooks/elemetsHooks.js";
+
+import { getElementHeight, scrollIntoView } from "./hooks/scrollHooks.js";
 
 const headerViewTemplate = `
   <div class="header__logo">
@@ -9,42 +17,49 @@ const headerViewTemplate = `
   </div>
   <nav class="header__nav">
     <ul class="header__nav-menu">
-      <li class="header__nav-item active" data-link="#main__me">IT'S ME</li>
-      <li class="header__nav-item" data-link="#main__about">ABOUT</li>
-      <li class="header__nav-item" data-link="#main__skills">SKILLS</li>
-      <li class="header__nav-item" data-link="#main__works">WORKS</li>
-      <li class="header__nav-item" data-link="#main__contact">CONTACT</li>
+      <li class="header__nav-item nav-me" data-link="#main__me">IT'S ME</li>
+      <li class="header__nav-item nav-about" data-link="#main__about">ABOUT</li>
+      <li class="header__nav-item nav-skills" data-link="#main__skills">SKILLS</li>
+      <li class="header__nav-item nav-works" data-link="#main__works">WORKS</li>
+      <li class="header__nav-item nav-contact" data-link="#main__contact">CONTACT</li>
     </ul>
   </nav>
 `;
-const headerEl = $("#header");
-const navBar = $(".header__nav-menu");
-const navScrollHandler = () => {
-  const removeHandler = (target, name, time) => {
-    setTimeout(() => {
-      removeName(target, name);
-    }, time);
-  };
-  event(navBar, "click", (e) => {
-    const active = $(".header__nav-item.active");
-    const target = e.target;
-    const link = target.dataset.link;
-    removeHandler(active, "active", 300);
-    addName(target, "active");
-    if (!link) return;
-    scrollIntoView(link);
-  });
-};
 
-const navStyleHandler = () => {
-  const headerHeight = scrollHeight(headerEl);
+const sceneInfo = [
+  {
+    id: 1,
+    scrollHeight: 0,
+    element: $("#main__me"),
+  },
+  {
+    id: 2,
+    scrollHeight: 0,
+    element: $("#main__about"),
+  },
+  {
+    id: 3,
+    scrollHeight: 0,
+    element: $("#main__skills"),
+  },
+  {
+    id: 4,
+    scrollHeight: 0,
+    element: $("#main__works"),
+  },
+  {
+    id: 5,
+    scrollHeight: 0,
+    element: $("#main__contact"),
+  },
+];
 
-  event(null, "scroll", () => {
-    window.scrollY >= headerHeight
-      ? addName(headerEl, "navbar__dark")
-      : removeName(headerEl, "navbar__dark");
-  });
-};
+let yOffset = 0;
+let prevScrollHeight = 0;
+let currentScene = 0;
+
+// 헤더 마운트
+const mountHeaderView = () => mount($("#header"), headerViewTemplate);
 
 // 뮤직 플레이어
 const audioHandler = () => {
@@ -61,19 +76,86 @@ const audioHandler = () => {
     audio.classList.add("play");
     audioBtn.classList.remove("spin");
   };
-  // audioPlay(audio);
+
+  audioPlay(audio);
   event(audioBtn, "click", () => {
     const audioClassName = audio.className;
     audioClassName === "play" ? audioPlay(audio) : audioPause(audio);
   });
 };
 
-const mountHeaderView = () => mount($("#header"), headerViewTemplate);
+//네비 바 스타일
+const navStyleHandler = () => {
+  const headerEl = $("#header");
+  yOffset = window.pageYOffset;
+  
+  yOffset >= getElementHeight(headerEl) && addName(headerEl, "navbar__dark");
+  event(null, "scroll", () => {
+    yOffset >= getElementHeight(headerEl)
+      ? addName(headerEl, "navbar__dark")
+      : removeHandler(headerEl, "navbar__dark", 100);
+  });
+};
+
+//네비 링크 이동
+const navScrollHandler = () => {
+  const navBar = $(".header__nav-menu");
+
+  event(navBar, "click", (e) => {
+    const target = e.target;
+    const link = target.dataset.link;
+
+    if (!link) return;
+    scrollIntoView(link);
+  });
+};
+
+//섹션별 구역 구분 세팅
+const setSceneLayout = () => {
+  for (let i = 0; i < sceneInfo.length; i++) {
+    sceneInfo[i].scrollHeight = sceneInfo[i].element.clientHeight - 1;
+  };
+  //새로고침 시
+  let totalScrollHeight = 0;
+  for (let i = 0; i < sceneInfo.length; i++) {
+    totalScrollHeight += sceneInfo[i].scrollHeight;
+    if (totalScrollHeight >= yOffset) {
+      currentScene = i;
+      break;
+    }
+  }
+  setAttribute("body", "id", `show-scene-${currentScene}`)
+};
+
+//스크롤 시 구역 확인 후 속성 추가 함수
+const scrollLoop = () => {
+  prevScrollHeight = 0;
+  for (let i = 0; i < currentScene; i++) {
+    prevScrollHeight += sceneInfo[i].scrollHeight;
+  }
+  if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
+    currentScene++;
+    setAttribute("body", "id", `show-scene-${currentScene}`)
+  }
+  if (yOffset < prevScrollHeight) {
+    if (currentScene === 0) return;
+    currentScene--;
+    setAttribute("body", "id", `show-scene-${currentScene}`)
+  }
+};
+
 
 export default function init() {
   mountHeaderView();
   audioHandler();
   navStyleHandler();
   navScrollHandler();
+  event(null, "load", setSceneLayout);
+  event(null, "resize", setSceneLayout);
+  event(null, "scroll", () => {
+    yOffset = window.pageYOffset;
+    scrollLoop();
+  });
+  setSceneLayout();
   return this;
 }

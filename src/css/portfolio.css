@@ -110,6 +110,8 @@ section {
   /* align-items: center; */
   text-align: center;
   min-height: 720px;
+
+  /* border: 10px solid transparent; */
 }
 
 .section__container {
@@ -138,6 +140,7 @@ section {
 }
 
 #footer {
+  height: 380px;
   padding: 2rem;
   margin: 0 auto;
   text-align: center;
@@ -169,12 +172,12 @@ section {
 
 @keyframes top-buttom {
   0% {
-    top: 90%;
+    top: 78%;
     opacity: 1;
   }
 
   100% {
-    top: 93%;
-    opacity: 0.3;
+    top: 80%;
+    opacity: 0.6;
   }
 }

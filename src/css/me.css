@@ -18,7 +18,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 720px;
+  height: 90%;
 
   background: url("../images/gradient.jpg") center/cover no-repeat;
   z-index: -1;
@@ -77,9 +77,10 @@ background-position: center bottom;
 }
 
 .me__contact-btn {
+
   width: var(--button-regular-width);
   height: var(--button-regular-height);
-  margin-top: 1rem;
+  margin-top: 2rem;
   border: 2px solid var(--color-dark-pink);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
@@ -96,22 +97,19 @@ background-position: center bottom;
 
 .down-arrow {
   position: absolute;
-  bottom: 20px;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
 
   width: var(--button-regular-width);
   height: var(--button-regular-height);
-  /* border: 1px solid var(--color-white); */
-  /* border-radius: var(--size-border-radius); */
   color: var(--color-light-white);
-  font-size: var(--font-title);
+  font-size: var(--font-large);
   line-height: 40px;
-  opacity: 0.8;
+  cursor: pointer;
 }
 
 .down-arrow.to-next {
   transition: all ease-in-out;
-  animation: top-buttom 1.8s linear infinite;
-  cursor: pointer;
+  animation: top-buttom 2s linear infinite;
 }

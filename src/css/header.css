@@ -93,6 +93,10 @@
   transform: scale(1.1);
 }
 
-.header__nav-item.active {
+#show-scene-0 .nav-me,
+#show-scene-1 .nav-about,
+#show-scene-2 .nav-skills,
+#show-scene-3 .nav-works,
+#show-scene-4 .nav-contact {
   border: 1px solid var(--color-white);
 }

@@ -1,4 +1,4 @@
-import { $, mount } from "./hooks/elemetsHooks.js"
+import { $, all$, mount, event } from "./hooks/elemetsHooks.js";
 
 const skillsViewTemplate = `
   <div class="section__container">
@@ -18,7 +18,7 @@ const skillsViewTemplate = `
               <span>60%</span>
             </div>
             <div class="skill__bar">
-              <div class="skill__value" style="width: 80%;"></div>
+              <div class="skill__value" data-skill="HTML"></div>
             </div>
           </div>
           <div class="skill">
@@ -27,7 +27,7 @@ const skillsViewTemplate = `
               <span>70%</span>
             </div>
             <div class="skill__bar">
-              <div class="skill__value" style="width: 80%;"></div>
+              <div class="skill__value" data-skill="CSS"></div>
             </div>
           </div>
           <div class="skill">
@@ -36,7 +36,7 @@ const skillsViewTemplate = `
               <span>70%</span>
             </div>
             <div class="skill__bar">
-              <div class="skill__value" style="width: 80%;"></div>
+              <div class="skill__value" data-skill="JAVASCRIPT"></div>
             </div>
           </div>
           <div class="skill">
@@ -45,7 +45,7 @@ const skillsViewTemplate = `
               <span>50%</span>
             </div>
             <div class="skill__bar">
-              <div class="skill__value" style="width: 80%;"></div>
+              <div class="skill__value" data-skill="REACT"></div>
             </div>
           </div>
         </div>
@@ -74,10 +74,27 @@ const skillsViewTemplate = `
       </div>
     </div>
   </div>
-`
+`;
+const mountSkillsBar = () => {
+  const skillValue = {
+    HTML: 60,
+    CSS: 70,
+    JAVASCRIPT: 70,
+    REACT: 50,
+  };
+  const valueEls = all$(".skill__value");
+  valueEls.forEach((valueEl) => valueEl.style.width = `0`);
+
+  event(null, "DOMContentLoaded", () => {
+    setTimeout(() => {
+      valueEls.forEach((valueEl) => valueEl.style.width = `${skillValue[valueEl.dataset.skill]}%`);
+    }, 500)
+  });
+};
 const mountSkillsView = () => mount($("#main__skills"), skillsViewTemplate);
 
 export default function init() {
   mountSkillsView();
+  mountSkillsBar();
   return this;
 }
