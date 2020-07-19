@@ -8,7 +8,7 @@ import {
 } from "./hooks/elemetsHooks.js";
 
 import { getElementHeight, scrollIntoView } from "./hooks/scrollHooks.js";
-
+import { sceneInfo } from "./states/state.js";
 const headerViewTemplate = `
   <div class="header__logo">
     <i class="fas fa-fan audio-btn"></i>
@@ -25,34 +25,6 @@ const headerViewTemplate = `
     </ul>
   </nav>
 `;
-
-const sceneInfo = [
-  {
-    id: 1,
-    scrollHeight: 0,
-    element: $("#main__me"),
-  },
-  {
-    id: 2,
-    scrollHeight: 0,
-    element: $("#main__about"),
-  },
-  {
-    id: 3,
-    scrollHeight: 0,
-    element: $("#main__skills"),
-  },
-  {
-    id: 4,
-    scrollHeight: 0,
-    element: $("#main__works"),
-  },
-  {
-    id: 5,
-    scrollHeight: 0,
-    element: $("#main__contact"),
-  },
-];
 
 let yOffset = 0;
 let prevScrollHeight = 0;

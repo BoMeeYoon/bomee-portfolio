@@ -27,10 +27,12 @@
   transition: all 1s ease-in-out;
   background-position: center top;
 }
+
 /* 스크롤 이동 시 클래스 네임 역동적으로  */
-#main__me.move-down::after{
-background-position: center bottom;
+#main__me.move-down::after {
+  background-position: center bottom;
 }
+
 #main__me span {
   position: absolute;
   width: inherit;

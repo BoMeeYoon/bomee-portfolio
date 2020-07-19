@@ -9,9 +9,11 @@
   width: 800px;
   margin: 6rem auto 0;
 }
-.about__mind-item{
-  margin-top: 3rem;
+
+.about__mind-item {
+  margin-top: 2.5rem;
 }
+
 .about__mind-icon {
   width: 130px;
   height: 130px;
@@ -23,7 +25,6 @@
   font-size: 48px;
   color: var(--color-blue);
   transition: all var(--animation-duration) ease-in-out;
-
 }
 
 .about__mind-icon:hover {

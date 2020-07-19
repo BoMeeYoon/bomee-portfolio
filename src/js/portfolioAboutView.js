@@ -1,4 +1,4 @@
-import { $, mount, event } from "./hooks/elemetsHooks.js"
+import { $, mount } from "./hooks/elemetsHooks.js";
 
 const headerAboutTemplate = `
   <div class="about section__container">
@@ -35,10 +35,9 @@ const headerAboutTemplate = `
   </div>
 `;
 
-
 const mountAboutView = () => mount($("#main__about"), headerAboutTemplate);
 
 export default function init() {
   mountAboutView();
   return this;
-};
+}
