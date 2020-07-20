@@ -1,3 +1,7 @@
+.about.section__container {
+  margin-top: 2rem;
+}
+
 .about__title.linear::after {
   background-color: var(--color-orange);
 }
@@ -6,12 +10,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 800px;
-  margin: 6rem auto 0;
+
+  margin: 4rem auto 0;
 }
 
 .about__mind-item {
-  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .about__mind-icon {
@@ -34,6 +38,17 @@
 }
 
 .about__mind-title {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   font-size: var(--font-large);
+}
+
+@media screen and (max-width: 768px) {
+  .about__mind {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .about__mind-item {
+    margin: 20px 0;
+  }
 }

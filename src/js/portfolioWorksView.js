@@ -9,8 +9,8 @@ import {
 import { worksData } from "./states/state.js";
 
 const worksViewTemplate = `
-  <div class="section__container">
-    <h1>My work</h1>
+  <div class="work section__container">
+    <h1 class="linear">My work</h1>
     <h3>Projects</h3>
     <div class="work__categories"></div>
     <div class="work__projects"></div>
@@ -78,7 +78,7 @@ const filterHandler = () => {
     const filter =
       e.target.dataset.filter || e.target.parentNode.dataset.filter;
     if (!filter) return;
-    console.log(filter);
+
     const active = $(".category__btn.selected");
     removeName(active, "selected");
     const target =

@@ -4,7 +4,9 @@ import {
   event,
   addName,
   removeHandler,
-  setAttribute
+  setAttribute,
+  toggleName,
+  removeName,
 } from "./hooks/elemetsHooks.js";
 
 import { getElementHeight, scrollIntoView } from "./hooks/scrollHooks.js";
@@ -16,7 +18,7 @@ const headerViewTemplate = `
     <a href="#none">BOMEE's PORTFOLIO</a>
   </div>
   <nav class="header__nav">
-    <ul class="header__nav-menu">
+    <ul class="header__nav-menu toggle">
       <li class="header__nav-item nav-me" data-link="#main__me">IT'S ME</li>
       <li class="header__nav-item nav-about" data-link="#main__about">ABOUT</li>
       <li class="header__nav-item nav-skills" data-link="#main__skills">SKILLS</li>
@@ -24,6 +26,9 @@ const headerViewTemplate = `
       <li class="header__nav-item nav-contact" data-link="#main__contact">CONTACT</li>
     </ul>
   </nav>
+  <button class="header__toggle-btn">
+    <i class="fas fa-bars"></i>
+  </button>
 `;
 
 let yOffset = 0;
@@ -60,7 +65,7 @@ const audioHandler = () => {
 const navStyleHandler = () => {
   const headerEl = $("#header");
   yOffset = window.pageYOffset;
-  
+
   yOffset >= getElementHeight(headerEl) && addName(headerEl, "navbar__dark");
   event(null, "scroll", () => {
     yOffset >= getElementHeight(headerEl)
@@ -86,7 +91,7 @@ const navScrollHandler = () => {
 const setSceneLayout = () => {
   for (let i = 0; i < sceneInfo.length; i++) {
     sceneInfo[i].scrollHeight = sceneInfo[i].element.clientHeight - 1;
-  };
+  }
   //새로고침 시
   let totalScrollHeight = 0;
   for (let i = 0; i < sceneInfo.length; i++) {
@@ -96,7 +101,7 @@ const setSceneLayout = () => {
       break;
     }
   }
-  setAttribute("body", "id", `show-scene-${currentScene}`)
+  setAttribute("body", "id", `show-scene-${currentScene}`);
 };
 
 //스크롤 시 구역 확인 후 속성 추가 함수
@@ -107,15 +112,29 @@ const scrollLoop = () => {
   }
   if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
     currentScene++;
-    setAttribute("body", "id", `show-scene-${currentScene}`)
+    setAttribute("body", "id", `show-scene-${currentScene}`);
   }
   if (yOffset < prevScrollHeight) {
     if (currentScene === 0) return;
     currentScene--;
-    setAttribute("body", "id", `show-scene-${currentScene}`)
+    setAttribute("body", "id", `show-scene-${currentScene}`);
   }
 };
 
+const toggleHandler = () => {
+  const navbarMenu = $(".header__nav-menu.toggle");
+  const navbarToggleBtn = $(".header__toggle-btn");
+  event(navbarToggleBtn, "click", () => {
+    toggleName(navbarMenu, "open");
+  });
+  event(navbarMenu, "click", (e) => {
+    const target = e.target;
+    const link = target.dataset.link;
+    if (!link) return;
+    removeName(navbarMenu, "open");
+    scrollIntoView(link);
+  });
+};
 
 export default function init() {
   mountHeaderView();
@@ -129,5 +148,6 @@ export default function init() {
     scrollLoop();
   });
   setSceneLayout();
+  toggleHandler();
   return this;
 }

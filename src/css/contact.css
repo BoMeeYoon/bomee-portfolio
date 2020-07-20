@@ -1,19 +1,22 @@
 #main__contact {
   background-color: var(--color-pink);
   min-height: 540px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-.contact.section__container {
-  padding: 3rem 0;
+.contact.contact.section__container {
+  padding: 0;
 }
-
 .contact__title,
 .contact__email {
   color: var(--color-white);
 }
 
 .contact__title {
-  margin: 32px 0;
+  margin: 0 0 32px;
 }
 
 .contact__email i {
@@ -63,3 +66,29 @@
   cursor: pointer;
 }
 
+.fa-arrow-up:hover{
+  background-color: var(--color-blue);
+}
+
+@media screen and (max-width: 768px) {
+
+  .contact__email {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+  }
+  .contact__email i {
+    margin-bottom: 1rem;
+    font-size: var(--font-title);
+  }
+  .contact__links {
+    font-size: 25px;
+  }
+  .fa-arrow-up {
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: var(--font-regular);
+  }
+}

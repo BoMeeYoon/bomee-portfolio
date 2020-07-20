@@ -76,3 +76,13 @@
 .etc {
   padding: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .skill__container>p {
+    padding: 5px;
+  }
+  .skill__box {
+    flex-direction: column;
+    margin: 15px;
+  }
+}

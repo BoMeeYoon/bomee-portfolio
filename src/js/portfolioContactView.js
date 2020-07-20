@@ -9,7 +9,7 @@ import { scrollIntoView } from "./hooks/scrollHooks.js";
 import states from "./states/state.js";
 const contactViewTemplate = `
   <div class="contact section__container">
-    <h1 class="contact__title">Let's talk</h1>
+    <h1 class="contact__title linear">Let's talk</h1>
     <h2 class="contact__email" type="email">
       <i class="fas fa-envelope-open-text"></i>primavera0331@gmail.com
     </h2>
@@ -33,7 +33,7 @@ const toTopHandler = () => {
     if(active) removeHandler(active, "active", 300);
     scrollIntoView("#main__me");
     addName($(".nav-me"), "active");
-    console.log($(".nav-me"));
+    
   });
 };
 const mountContactView = () => mount($("#main__contact"), contactViewTemplate);

@@ -138,3 +138,30 @@
 .work__project.invisible {
   display: none;
 }
+
+@media screen and (max-width: 768px) {
+  .work.section__container {
+    min-height: 300px;
+  }
+
+  .work__categories {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px 10px;
+  }
+
+  .category__btn {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 7px 10px;
+    font-size: var(--font-small);
+  }
+
+  .work__projects {
+    margin-bottom: 3rem;
+  }
+
+}

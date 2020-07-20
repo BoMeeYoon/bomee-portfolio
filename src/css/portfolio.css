@@ -86,6 +86,7 @@ p {
 
 body {
   background-color: var(--color-white);
+  max-width: 100vw;
   /*IE and Edge,/ Firefox*/
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -109,8 +110,7 @@ section {
   justify-content: center;
   /* align-items: center; */
   text-align: center;
-  min-height: 720px;
-
+  min-height: 650px;
   /* border: 10px solid transparent; */
 }
 
@@ -130,24 +130,33 @@ section {
 .linear::after {
   content: "";
   position: absolute;
-  bottom: -30%;
+  bottom: -15%;
   left: 50%;
   transform: translate(-50%);
-  width: 7rem;
+  width: auto;
   height: 1.5px;
   border-radius: var(--size-border-radius);
-  background-color: var(--color-white);
+  background-color: var(--color-light-blue);
 }
 
 #footer {
-  height: 380px;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 270px;
+  padding: 1rem;
   margin: 0 auto;
-  text-align: center;
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
 }
 
 #footer i {
   animation: spin 2.5s linear infinite;
+}
+
+#footer p:nth-child(2) {
+  font-size: 23px;
 }
 
 @keyframes spin {
@@ -170,14 +179,24 @@ section {
   }
 }
 
-@keyframes top-buttom {
-  0% {
-    top: 78%;
-    opacity: 1;
+@keyframes top-bottom {
+
+  0%,
+  100% {
+    transform: translate(-50%, 0);
   }
 
-  100% {
-    top: 80%;
-    opacity: 0.6;
+  50% {
+    transform: translate(-50%, 8px)
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    min-height: auto;
+  }
+
+  .section__container {
+    padding: 0;
   }
 }
