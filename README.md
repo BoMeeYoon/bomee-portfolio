@@ -1,5 +1,6 @@
 # bomee-portfolio
 my first portfolio - vanilla.js
+# 완성: https://bomeeyoon.github.io/bomee-portfolio/
 
 # 바닐라로 만든 첫 포트폴리오
 -----
