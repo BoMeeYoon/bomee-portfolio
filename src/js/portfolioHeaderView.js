@@ -41,7 +41,7 @@ const mountHeaderView = () => mount($("#header"), headerViewTemplate);
 // 뮤직 플레이어
 const audioHandler = () => {
   const audioBtn = $(".audio-btn");
-  const audio = new Audio("./audio/bgm_cut.mp3");
+  const audio = new Audio("src/audio/bgm_cut.mp3");
 
   const audioPlay = (audio) => {
     audio.play();

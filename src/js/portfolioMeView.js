@@ -8,7 +8,7 @@ const meViewTemplate = `
         <span></span>
         <span></span>
         <img
-          src="./images/avatar.jpg"
+          src="src/images/avatar.jpg"
           alt="BoMee's profile photo"
           class="me__photo"
         />

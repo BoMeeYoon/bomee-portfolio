@@ -64,7 +64,7 @@ export const worksData = [
   {
     id: 1,
     title: `😻 주차관리시스템`,
-    image: `./images/parkinglot.png`,
+    image: `src/images/parkinglot.png`,
     description: {
       engTitle: `Parking Lot System`,
       spec: `HTML, CSS, Javascript<br/>node.js, express<br/>mySQL<br/>Webpack, Babel`,
@@ -75,7 +75,7 @@ export const worksData = [
   {
     id: 2,
     title: `😻 지출기입장`,
-    image: `./images/expenses.png`,
+    image: `src/images/expenses.png`,
     description: {
       engTitle: `Financial Ledger`,
       spec: `React.js`,
@@ -86,7 +86,7 @@ export const worksData = [
   {
     id: 3,
     title: `😻 자동검색창`,
-    image: `./images/autocomplete.png`,
+    image: `src/images/autocomplete.png`,
     description: {
       engTitle: `Autocomplete`,
       spec: `HTML, CSS, Javascript<br/>Webpack, Babel, Eslint`,
@@ -97,7 +97,7 @@ export const worksData = [
   {
     id: 4,
     title: `😻 온라인교육웹페이지`,
-    image: `./images/onlineeducation.png`,
+    image: `src/images/onlineeducation.png`,
     description: {
       engTitle: `Online Coding Education`,
       spec: `HTML, CSS, Javascript<br/>Java, Spring, JWT<br/>Python, Django, SSR<br/>MySQL`,
@@ -108,7 +108,7 @@ export const worksData = [
   {
     id: 5,
     title: `😻 주차정산시스템`,
-    image: `./images/parkinglotbefore.png`,
+    image: `src/images/parkinglotbefore.png`,
     description: {
       engTitle: `Parking Lot Pay System`,
       spec: `HTML, CSS, Javascript, jquery<br/>Node.js, express<br/>MySQL`,
