@@ -1,5 +1,4 @@
 .me.section__container {
-  display: relative;
   margin-top: 3rem;
   opacity: 1;
   animation: fadein 2.5s;
@@ -102,7 +101,7 @@
 
 .down-arrow {
   position: absolute;
-  bottom: -20px;
+  bottom: 100px;
   left: 50%;
 
   color: var(--color-light-white);
@@ -117,7 +116,7 @@
     margin-top: 0;
     padding-top: 6rem;
   }
-
+  
   .me__image-container {
     width: 150px;
     height: 150px;
